@@ -1,0 +1,17 @@
+Neste teste é importante que seja realizado as atividades dentro do contexto da framework, utilizando as classes quando apropriado e também ferramentas do Delphi moderno, como generics
+
+1 - Criar duas novas colunas na tabela Imposto Federal : Data início e data fim, preencher a data fim dos registros existentes com a data atual.
+2 - Inserir na tabela Imposto Federal os dados: 
+  nome = 'CBS';
+  aliquotaModal = 0.1
+  dataInicio = 01/01/2026
+  
+  fechar a dataFim da CBS anterior com a data fim apropriada (31/12/2025)
+  
+3 - Criar uma tabela: CFOP com as colunas cfop e descrição
+4 - Criar uma tabela: NCM com as colunas código descrição data inicio data fim 
+5 - essas duas tabelas devem estar presentes no listbox da tela inicial
+6 - alterar a tela inicial, para ao clicar no nome de uma tabela, gerar uma pagina com essa tabela mostrando todos os registros (no momento todo clique gera uma tab com a tabela Impostos Federais)
+7 - Criar um novo banco de dados no sistema, com o nome de dados_auxiliares nele contendo uma tabela chamada Versao com as colunas : numero e data
+8 - implementar o botão "salvar em excel" que está em frVCLGrid
+9 - Separar o servidor de banco de dados em uma aplicação console externa, alterando o projeto teste para conectar nessa aplicação externa
