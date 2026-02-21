@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3120FD99-F25A-47E7-8141-1080836DD3D9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="client\ProjetoClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="servidor\ProjetoServidor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TesteUnitario\ProjetoTesteUnitário.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ProjetoClient">
+        <MSBuild Projects="client\ProjetoClient.dproj"/>
+    </Target>
+    <Target Name="ProjetoClient:Clean">
+        <MSBuild Projects="client\ProjetoClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjetoClient:Make">
+        <MSBuild Projects="client\ProjetoClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProjetoServidor">
+        <MSBuild Projects="servidor\ProjetoServidor.dproj"/>
+    </Target>
+    <Target Name="ProjetoServidor:Clean">
+        <MSBuild Projects="servidor\ProjetoServidor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjetoServidor:Make">
+        <MSBuild Projects="servidor\ProjetoServidor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProjetoTesteUnitário">
+        <MSBuild Projects="TesteUnitario\ProjetoTesteUnitário.dproj"/>
+    </Target>
+    <Target Name="ProjetoTesteUnitário:Clean">
+        <MSBuild Projects="TesteUnitario\ProjetoTesteUnitário.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjetoTesteUnitário:Make">
+        <MSBuild Projects="TesteUnitario\ProjetoTesteUnitário.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ProjetoClient;ProjetoServidor;ProjetoTesteUnitário"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ProjetoClient:Clean;ProjetoServidor:Clean;ProjetoTesteUnitário:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ProjetoClient:Make;ProjetoServidor:Make;ProjetoTesteUnitário:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -20,6 +20,8 @@ object FormPrincipal: TFormPrincipal
     Align = alClient
     BevelOuter = bvLowered
     TabOrder = 0
+    ExplicitWidth = 1030
+    ExplicitHeight = 557
     object splt: TSplitter
       Left = 241
       Top = 1
@@ -36,7 +38,8 @@ object FormPrincipal: TFormPrincipal
       Align = alLeft
       ItemHeight = 15
       TabOrder = 0
-      OnClick = lbTabelasClick
+      OnClick = LbTabelasClick
+      ExplicitHeight = 555
     end
     object pcTabelas: TPageControl
       Left = 244
@@ -45,6 +48,8 @@ object FormPrincipal: TFormPrincipal
       Height = 556
       Align = alClient
       TabOrder = 1
+      ExplicitWidth = 785
+      ExplicitHeight = 555
     end
   end
 end

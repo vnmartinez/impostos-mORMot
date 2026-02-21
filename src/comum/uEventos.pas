@@ -1,6 +1,5 @@
 unit uEventos;
 
-//Eventos para objetos que possuem interação direta com a interface.
 
 interface
 
@@ -16,7 +15,7 @@ type
   TOnDoubleClickNaLinha = procedure(linha, coluna : Integer) of object;
   TOnSelecionouLinha = procedure(linha : Integer) of object;
 
-  TOnClicouBotaoAcaoNoGrid = function(linha, coluna : Integer) : Boolean of object; //resultado = deve atualizar data source.
+  TOnClicouBotaoAcaoNoGrid = function(linha, coluna : Integer) : Boolean of object;
 
   TOnAlterouPropriedade = procedure(prop : TRttiProperty) of object;
 
@@ -25,3 +24,4 @@ type
 implementation
 
 end.
+

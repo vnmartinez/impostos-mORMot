@@ -83,7 +83,6 @@ type
 implementation
 
 
-{ TControladorVO }
 
 function TControladorVO.ClicouBotaoAcaoNoGrid(linha, coluna: Integer) : Boolean;
 begin
@@ -92,7 +91,6 @@ end;
 
 procedure TControladorVO.DoubleClickNaLinha(linha, coluna: Integer);
 begin
-  //
 end;
 
 function TControladorVO.GetDescricaoControlador: String;
@@ -117,7 +115,6 @@ end;
 
 procedure TControladorVO.SelecionouLinhaNoGrid(linha: Integer);
 begin
-  //
 end;
 
 procedure TControladorVO.AtualizarDados;
@@ -125,7 +122,6 @@ begin
   CarregarDados;
 end;
 
-{ TControladorVOComData }
 
 function TControladorVOComData.GetDataFim: TDateTime;
 begin
@@ -148,3 +144,4 @@ begin
 end;
 
 end.
+
