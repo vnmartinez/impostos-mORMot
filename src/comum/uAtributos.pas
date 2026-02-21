@@ -28,7 +28,6 @@ implementation
 var
   _ctx : TRttiContext;
 
-{ TPegarAtributo }
 
 class function TPegarAtributo.PegarDaClasse<T>(aClasse: TClass): T;
 var
@@ -43,7 +42,9 @@ begin
     for a in typ.GetAttributes do
     begin
       if a is T then
+      begin
         exit(T(a));
+      end;
     end;
   finally
     ctx.Free;
@@ -56,7 +57,9 @@ var
 begin
   result := nil;
   if aProp = nil then
+  begin
     exit;
+  end;
   for attr in aProp.GetAttributes do
   begin
     if attr is T then
@@ -82,7 +85,9 @@ begin
     for a in typ.GetAttributes do
     begin
       if a is T then
+      begin
         result.Add(T(a));
+      end;
     end;
   finally
     ctx.Free;
@@ -96,15 +101,18 @@ var
 begin
   result := TList<T>.Create;
   if aProp = nil then
+  begin
     exit;
+  end;
   for attr in aProp.GetAttributes do
   begin
     if attr is T then
+    begin
       result.Add(T(attr));
+    end;
   end;
 end;
 
-{ TNomeAmigavel }
 
 constructor TNomeAmigavel.Create(const aNome: String);
 begin
@@ -118,3 +126,4 @@ finalization
   _ctx.Free;
 
 end.
+

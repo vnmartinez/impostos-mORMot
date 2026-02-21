@@ -64,7 +64,6 @@ type
 
 implementation
 
-{ TServidorRest }
 
 constructor TServidor.Create;
 begin
@@ -126,10 +125,8 @@ end;
 procedure TServidor.OnServiceCreateInstance(Sender: TServiceFactoryServer;
   Instance: TInterfacedObject);
 begin
-  //CASO TENHA INITS
 end;
 
-{ TServidorRestHTTP }
 
 constructor TServidorHTTP.Create(APorta: String);
 begin
@@ -139,7 +136,14 @@ end;
 
 destructor TServidorHTTP.Destroy;
 begin
-  fHttpServer.Free;
+  if Assigned(fHttpServer) then
+  begin
+    try
+      fHttpServer.Shutdown(True);
+    except
+    end;
+    FreeAndNil(fHttpServer);
+  end;
 
   inherited;
 end;
@@ -160,7 +164,6 @@ begin
 
 end;
 
-{ TServidorRestPipe }
 
 constructor TServidorPipe.Create(APipeName: String);
 begin
@@ -175,7 +178,6 @@ begin
   fRestServer.ExportServerNamedPipe(fPipeName);
 end;
 
-{ TServiceInfo }
 
 constructor TServiceInfo.Create;
 begin
@@ -189,4 +191,5 @@ begin
 end;
 
 end.
+
 
