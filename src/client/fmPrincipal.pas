@@ -37,7 +37,7 @@ begin
   PreencherListBox;
   if not TGerenciadorServidores.TestarConexao then
   begin
-    ShowMessage('Servidor externo nao encontrado em 127.0.0.1:8888. Inicie o ServidorSistemaTesteConsole.');
+    ShowMessage('Servidor externo nao encontrado em 127.0.0.1:8888. Inicie o Servidor.');
   end;
 end;
 
@@ -49,7 +49,7 @@ begin
   end;
   if not TGerenciadorServidores.TestarConexao then
   begin
-    ShowMessage('Servidor externo indisponivel. Inicie o ServidorSistemaTesteConsole.');
+    ShowMessage('Servidor externo indisponivel. Inicie o Servidor.');
     Exit;
   end;
   AbrirTabela(PegarTabelaSelecionada, lbTabelas.Items[lbTabelas.ItemIndex]);
