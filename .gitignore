@@ -82,3 +82,8 @@ __recovery/
 modules/
 
 mORMot/
+*.db
+
+# Logs
+*.log
+src/servidor/Logs/

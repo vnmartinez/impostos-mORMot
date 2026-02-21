@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<test-results name="C:\Fontes\impostos-mORMot\src\TesteUnitario\Win32\Debug\ProjetoTesteUnitário.exe" total="14" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2026-02-21" time="18:44:12">
+  <culture-info current-culture="en" current-uiculture="en" />
+  <test-suite type="Assembly" name="ProjetoTesteUnitário.exe" executed="true" result="Success" success="True" time="18:44:12" asserts="0">
+    <results>
+        <test-suite type="Namespace" name="uTesteAtributos" executed="true" result="Success" success="True" time="0.002" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TTestesAtributos" executed="True" result="Success" success="True" time="0.002" >
+                <results>
+                  <test-case name="PegarDaClasse_DeveRetornarNomeAmigavel" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarListaDaClasse_DeveRetornarAtributosDoTipo" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarDaProp_DeveRetornarAtributoDaPropriedade" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarDaProp_ComNil_DeveRetornarNil" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarListaDaProp_ComNil_DeveRetornarListaVazia" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+        <test-suite type="Namespace" name="uTesteControladorVO" executed="true" result="Success" success="True" time="0.003" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TTestesControladorVO" executed="True" result="Success" success="True" time="0.003" >
+                <results>
+                  <test-case name="AtualizarDados_DeveDelegarParaCarregarDados" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OnDoubleClickNaLinha_DeveInvocarMetodoProtegido" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OnSelecionouLinha_DeveInvocarMetodoProtegido" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OnClicouBotaoAcaoNoGrid_DeveRetornarValorDoMetodo" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PropriedadesDeData_DevemPersistirValores" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="DescricaoControlador_DeveVirDoOverride" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+        <test-suite type="Namespace" name="uTesteModeloSistema" executed="true" result="Success" success="True" time="0.002" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TTestesModeloSistema" executed="True" result="Success" success="True" time="0.002" >
+                <results>
+                  <test-case name="PegarModeloTeste_DeveConterTabelasEsperadas" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="PegarModeloAuxiliar_DeveConterSomenteVersao" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TabelasComNomeAmigavel_DevemTerAtributo" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+    </results>
+  </test-suite>
+</test-results>
