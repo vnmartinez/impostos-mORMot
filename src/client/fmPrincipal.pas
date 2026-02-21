@@ -99,16 +99,13 @@ begin
   lTabSheet.PageControl := pcTabelas;
   lTabSheet.Caption := 'Tabela ' + ATitulo;
   pcTabelas.ActivePage := lTabSheet;
-  var lDados := ATabela.CreateAndFillPrepare(TGerenciadorServidores.ServidorTeste, '');
-  try
-    var lFrame := TframeVCLGrid.Create(lTabSheet);
-    lFrame.Name := 'FrameTabela' + IntToStr(pcTabelas.PageCount);
-    lFrame.Parent := lTabSheet;
-    lFrame.Inicializar(TSynSQLTableDataSet.Create(lFrame, lDados.FillTable));
-    lFrame.Align := alClient;
-  finally
-    lDados.Free;
-  end;
+  
+  var lJSON := TGerenciadorServidores.ServidorTeste.RetrieveListJSON(ATabela, '', []);
+  var lFrame := TframeVCLGrid.Create(lTabSheet);
+  lFrame.Name := 'FrameTabela' + IntToStr(pcTabelas.PageCount);
+  lFrame.Parent := lTabSheet;
+  lFrame.Inicializar(JSONTableToDataSet(lFrame, lJSON, [ATabela]));
+  lFrame.Align := alClient;
 end;
 
 end.
