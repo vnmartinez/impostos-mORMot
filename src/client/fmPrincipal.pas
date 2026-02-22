@@ -47,11 +47,13 @@ begin
   begin
     Exit;
   end;
+
   if not TGerenciadorServidores.TestarConexao then
   begin
     ShowMessage('Servidor externo indisponivel. Inicie o Servidor.');
     Exit;
   end;
+
   AbrirTabela(PegarTabelaSelecionada, lbTabelas.Items[lbTabelas.ItemIndex]);
 end;
 
@@ -85,6 +87,7 @@ begin
   begin
     Exit;
   end;
+
   Result := TSQLRecordClass(lbTabelas.Items.Objects[lbTabelas.ItemIndex]);
 end;
 
@@ -104,7 +107,7 @@ begin
   var lFrame := TframeVCLGrid.Create(lTabSheet);
   lFrame.Name := 'FrameTabela' + IntToStr(pcTabelas.PageCount);
   lFrame.Parent := lTabSheet;
-  lFrame.Inicializar(JSONTableToDataSet(lFrame, lJSON, [ATabela]));
+  lFrame.Inicializar(JSONTableToDataSet(lFrame, lJSON, [ATabela]), ATabela);
   lFrame.Align := alClient;
 end;
 

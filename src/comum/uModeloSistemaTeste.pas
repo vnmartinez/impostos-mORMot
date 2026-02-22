@@ -73,15 +73,16 @@ type
   function PegarModeloAuxiliar : TSQLModel;
 
 implementation
+
 function PegarModeloTeste : TSQLModel;
 begin
   Result := TSQLModel.Create([TImpostoFederal, TImpostoEstadual, TCFOP, TNCM], 'impostos');
 end;
+
 function PegarModeloAuxiliar: TSQLModel;
 begin
   Result := TSQLModel.Create([TVersao], 'dados_auxiliares');
 end;
-
 
 class procedure TImpostoFederal.InitializeTable(Server: TSQLRestServer;
   const FieldName: RawUTF8; Options: TSQLInitializeTableOptions);
@@ -96,16 +97,19 @@ begin
       lImpostoFederal.dataInicio := 0;
       lImpostoFederal.dataFim := 0;
       Server.Add(lImpostoFederal, true);
+
       lImpostoFederal.nome := 'Cofins';
       lImpostoFederal.aliquotaModal := 7.6;
       lImpostoFederal.dataInicio := 0;
       lImpostoFederal.dataFim := 0;
       Server.Add(lImpostoFederal, true);
+
       lImpostoFederal.nome := 'CBS';
       lImpostoFederal.aliquotaModal := 0;
       lImpostoFederal.dataInicio := 0;
       lImpostoFederal.dataFim := 0;
       Server.Add(lImpostoFederal, true);
+
       lImpostoFederal.nome := 'IBS';
       lImpostoFederal.aliquotaModal := 0;
       lImpostoFederal.dataInicio := 0;

@@ -28,10 +28,26 @@ object frameVCLGrid: TframeVCLGrid
     object btnExportarExcel: TButton
       Left = 8
       Top = 6
-      Width = 169
+      Width = 129
       Height = 25
       Caption = 'Exportar para excel'
       TabOrder = 0
+    end
+    object btnAdicionar: TButton
+      Left = 143
+      Top = 6
+      Width = 90
+      Height = 25
+      Caption = 'Adicionar'
+      TabOrder = 1
+    end
+    object btnEditar: TButton
+      Left = 239
+      Top = 6
+      Width = 90
+      Height = 25
+      Caption = 'Editar'
+      TabOrder = 2
     end
   end
   object ds: TDataSource
