@@ -35,17 +35,27 @@ type
     [TearDown]
     procedure TearDown;
     [Test]
-    procedure AtualizarDados_DeveDelegarParaCarregarDados;
+    procedure AtualizarDadosDeveDelegarParaCarregarDados;
     [Test]
-    procedure OnDoubleClickNaLinha_DeveInvocarMetodoProtegido;
+    procedure OnDoubleClickNaLinhaDeveRegistrarLinha;
     [Test]
-    procedure OnSelecionouLinha_DeveInvocarMetodoProtegido;
+    procedure OnDoubleClickNaLinhaDeveRegistrarColuna;
     [Test]
-    procedure OnClicouBotaoAcaoNoGrid_DeveRetornarValorDoMetodo;
+    procedure OnSelecionouLinhaDeveRegistrarLinha;
     [Test]
-    procedure PropriedadesDeData_DevemPersistirValores;
+    procedure OnClicouBotaoAcaoNoGridDeveRetornarTrueQuandoConfigurado;
     [Test]
-    procedure DescricaoControlador_DeveVirDoOverride;
+    procedure OnClicouBotaoAcaoNoGridDeveRetornarFalseQuandoConfigurado;
+    [Test]
+    procedure OnClicouBotaoAcaoNoGridDeveRegistrarLinha;
+    [Test]
+    procedure OnClicouBotaoAcaoNoGridDeveRegistrarColuna;
+    [Test]
+    procedure PropriedadeDataIniDevePersistirValor;
+    [Test]
+    procedure PropriedadeDataFimDevePersistirValor;
+    [Test]
+    procedure DescricaoControladorDeveVirDoOverride;
   end;
 
 implementation
@@ -80,49 +90,75 @@ begin
 end;
 
 
-procedure TTestesControladorVO.AtualizarDados_DeveDelegarParaCarregarDados;
+procedure TTestesControladorVO.AtualizarDadosDeveDelegarParaCarregarDados;
 begin
   FSut.AtualizarDados;
   Assert.AreEqual(1, FSut.CarregarDadosChamadas);
 end;
 
-procedure TTestesControladorVO.DescricaoControlador_DeveVirDoOverride;
+procedure TTestesControladorVO.DescricaoControladorDeveVirDoOverride;
 begin
   Assert.AreEqual('ControladorStub', FSut.descricaoControlador);
 end;
 
-procedure TTestesControladorVO.OnClicouBotaoAcaoNoGrid_DeveRetornarValorDoMetodo;
+procedure TTestesControladorVO.OnClicouBotaoAcaoNoGridDeveRegistrarColuna;
+begin
+  FSut.ResultadoAcao := True;
+  FSut.OnClicouBotaoAcaoNoGrid(8, 6);
+  Assert.AreEqual(6, FSut.UltimaColunaAcao);
+end;
+
+procedure TTestesControladorVO.OnClicouBotaoAcaoNoGridDeveRegistrarLinha;
+begin
+  FSut.ResultadoAcao := True;
+  FSut.OnClicouBotaoAcaoNoGrid(8, 6);
+  Assert.AreEqual(8, FSut.UltimaLinhaAcao);
+end;
+
+procedure TTestesControladorVO.OnClicouBotaoAcaoNoGridDeveRetornarFalseQuandoConfigurado;
+begin
+  FSut.ResultadoAcao := False;
+  var LResultado := FSut.OnClicouBotaoAcaoNoGrid(8, 6);
+  Assert.IsFalse(LResultado);
+end;
+
+procedure TTestesControladorVO.OnClicouBotaoAcaoNoGridDeveRetornarTrueQuandoConfigurado;
 begin
   FSut.ResultadoAcao := True;
   var LResultado := FSut.OnClicouBotaoAcaoNoGrid(8, 6);
   Assert.IsTrue(LResultado);
-  Assert.AreEqual(8, FSut.UltimaLinhaAcao);
-  Assert.AreEqual(6, FSut.UltimaColunaAcao);
 end;
 
-procedure TTestesControladorVO.OnDoubleClickNaLinha_DeveInvocarMetodoProtegido;
+procedure TTestesControladorVO.OnDoubleClickNaLinhaDeveRegistrarColuna;
 begin
   FSut.OnDoubleClickNaLinha(2, 4);
-  Assert.AreEqual(2, FSut.UltimaLinhaDoubleClick);
   Assert.AreEqual(4, FSut.UltimaColunaDoubleClick);
 end;
 
-procedure TTestesControladorVO.OnSelecionouLinha_DeveInvocarMetodoProtegido;
+procedure TTestesControladorVO.OnDoubleClickNaLinhaDeveRegistrarLinha;
+begin
+  FSut.OnDoubleClickNaLinha(2, 4);
+  Assert.AreEqual(2, FSut.UltimaLinhaDoubleClick);
+end;
+
+procedure TTestesControladorVO.OnSelecionouLinhaDeveRegistrarLinha;
 begin
   FSut.OnSelecionouLinha(11);
   Assert.AreEqual(11, FSut.UltimaLinhaSelecionada);
 end;
 
-procedure TTestesControladorVO.PropriedadesDeData_DevemPersistirValores;
+procedure TTestesControladorVO.PropriedadeDataFimDevePersistirValor;
+begin
+  var LDataFim := EncodeDate(2026, 12, 31);
+  FSut.dataFim := LDataFim;
+  Assert.AreEqual<TDateTime>(LDataFim, FSut.dataFim);
+end;
+
+procedure TTestesControladorVO.PropriedadeDataIniDevePersistirValor;
 begin
   var LDataIni := EncodeDate(2026, 1, 1);
-  var LDataFim := EncodeDate(2026, 12, 31);
-
   FSut.dataIni := LDataIni;
-  FSut.dataFim := LDataFim;
-
   Assert.AreEqual<TDateTime>(LDataIni, FSut.dataIni);
-  Assert.AreEqual<TDateTime>(LDataFim, FSut.dataFim);
 end;
 
 procedure TTestesControladorVO.Setup;

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<test-results name="C:\Fontes\impostos-mORMot\src\TesteUnitario\Win64\Debug\ProjetoTesteUnitário.exe" total="31" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2026-02-21" time="21:53:52">
+  <culture-info current-culture="en" current-uiculture="en" />
+  <test-suite type="Assembly" name="ProjetoTesteUnitário.exe" executed="true" result="Success" success="True" time="21:53:52" asserts="0">
+    <results>
+        <test-suite type="Namespace" name="uTesteAtributos" executed="true" result="Success" success="True" time="0.002" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TTestesAtributos" executed="True" result="Success" success="True" time="0.002" >
+                <results>
+                  <test-case name="PegarDaClasseDeveRetornarAtributo" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarDaClasseDeveRetornarNomeAmigavel" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarListaDaClasseDeveConterUmItem" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarListaDaClasseDeveRetornarValorCorreto" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarDaPropDeveEncontrarPropriedadeCodigo" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarDaPropDeveRetornarAtributoDaPropriedade" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarDaPropDeveRetornarNomeDaPropriedade" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarDaPropComNilDeveRetornarNil" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarListaDaPropComNilDeveRetornarListaVazia" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+        <test-suite type="Namespace" name="uTesteControladorVO" executed="true" result="Success" success="True" time="0.005" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TTestesControladorVO" executed="True" result="Success" success="True" time="0.005" >
+                <results>
+                  <test-case name="AtualizarDadosDeveDelegarParaCarregarDados" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OnDoubleClickNaLinhaDeveRegistrarLinha" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OnDoubleClickNaLinhaDeveRegistrarColuna" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OnSelecionouLinhaDeveRegistrarLinha" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OnClicouBotaoAcaoNoGridDeveRetornarTrueQuandoConfigurado" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OnClicouBotaoAcaoNoGridDeveRetornarFalseQuandoConfigurado" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OnClicouBotaoAcaoNoGridDeveRegistrarLinha" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OnClicouBotaoAcaoNoGridDeveRegistrarColuna" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PropriedadeDataIniDevePersistirValor" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PropriedadeDataFimDevePersistirValor" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="DescricaoControladorDeveVirDoOverride" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+        <test-suite type="Namespace" name="uTesteModeloSistema" executed="true" result="Success" success="True" time="0.003" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TTestesModeloSistema" executed="True" result="Success" success="True" time="0.003" >
+                <results>
+                  <test-case name="PegarModeloTesteDeveConterQuatroTabelas" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarModeloAuxiliarDeveConterUmaTabela" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarModeloAuxiliarTabelaZeroDeveSerVersao" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarModeloTesteTabelaZeroDeveSerImpostoFederal" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarModeloTesteTabelaUmDeveSerImpostoEstadual" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                  <test-case name="PegarModeloTesteTabelaDoisDeveSerCfop" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="PegarModeloTesteTabelaTresDeveSerNcm" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="NomeAmigavelImpostoFederalDeveSerImpostosFederais" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="NomeAmigavelImpostoEstadualDeveSerImpostosEstaduais" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="NomeAmigavelCfopDeveSerCfop" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="NomeAmigavelNcmDeveSerNcm" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+    </results>
+  </test-suite>
+</test-results>
